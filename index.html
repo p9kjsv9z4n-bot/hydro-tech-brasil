@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hydro Tech Brasil — irrigação automática para uma agricultura mais eficiente e sustentável.">
+  <title>Hydro Tech Brasil | Irrigação Inteligente</title>
+  <style>
+    :root{
+      --blue:#0877b9; --blue-dark:#07517d; --green:#36a852; --green-dark:#19743a;
+      --ink:#153247; --muted:#617584; --light:#f3faf6; --white:#fff; --line:#dcebe2;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e7eee9}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;font-weight:900;color:var(--blue-dark);font-size:20px}
+    .brand img{height:55px;width:auto;object-fit:contain}
+    .links{display:flex;gap:25px;font-weight:700;font-size:14px;color:#365263}
+    .links a:hover{color:var(--green)}
+    .btn{display:inline-block;background:linear-gradient(135deg,var(--green),#278c45);color:#fff;padding:13px 21px;border-radius:12px;font-weight:800;box-shadow:0 8px 20px rgba(54,168,82,.2);transition:.2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.blue{background:var(--blue)}
+    .hero{background:radial-gradient(circle at 80% 20%,#d9f4e1 0,transparent 34%),linear-gradient(135deg,#f5fbff,#effaf2);padding:80px 0 90px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px}
+    .tag{display:inline-flex;gap:8px;align-items:center;background:#e5f6ea;color:var(--green-dark);font-weight:800;border-radius:999px;padding:7px 13px;font-size:13px;margin-bottom:18px}
+    h1{font-size:clamp(42px,6vw,68px);line-height:1.03;letter-spacing:-2.5px;margin-bottom:22px;color:#12364a}
+    h1 span{color:var(--green)}
+    .hero p{font-size:19px;color:var(--muted);max-width:650px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{background:#fff;border:1px solid #dceee4;border-radius:28px;padding:26px;box-shadow:0 25px 60px rgba(20,73,58,.13)}
+    .hero-card img{width:100%;display:block;border-radius:18px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .stat{background:#f5faf7;border-radius:16px;padding:14px;text-align:center}
+    .stat b{display:block;font-size:22px;color:var(--blue-dark)}
+    .stat small{color:var(--muted)}
+    section{padding:85px 0}
+    .section-head{text-align:center;max-width:760px;margin:0 auto 45px}
+    .eyebrow{color:var(--green-dark);font-weight:900;text-transform:uppercase;letter-spacing:1.7px;font-size:12px;margin-bottom:8px}
+    h2{font-size:clamp(30px,4vw,44px);line-height:1.15;margin-bottom:14px;color:#143b50}
+    .section-head p{color:var(--muted);font-size:17px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{padding:27px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 10px 30px rgba(25,75,52,.05)}
+    .icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;background:#e8f7ed;font-size:25px;margin-bottom:17px}
+    .card h3{font-size:20px;margin-bottom:8px}
+    .card p{color:var(--muted)}
+    .steps{background:var(--light)}
+    .step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+    .step{position:relative;background:#fff;padding:25px;border-radius:20px;border:1px solid #e0eee5}
+    .num{font-size:13px;font-weight:900;color:#fff;background:var(--blue);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin-bottom:17px}
+    .step h3{margin-bottom:8px}
+    .step p{font-size:14px;color:var(--muted)}
+    .benefits{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .checklist{display:grid;gap:14px;margin-top:25px}
+    .check{display:flex;gap:12px;align-items:flex-start}
+    .check strong{display:block}
+    .check p{color:var(--muted);font-size:14px}
+    .tick{flex:0 0 28px;height:28px;border-radius:50%;background:#e6f6ea;color:var(--green-dark);display:grid;place-items:center;font-weight:900}
+    .panel{background:linear-gradient(145deg,#0c618f,#0a4769);color:#fff;padding:35px;border-radius:28px;box-shadow:0 20px 50px rgba(8,83,124,.2)}
+    .panel h3{font-size:27px;margin-bottom:12px}
+    .panel p{color:#d8edf7;margin-bottom:20px}
+    .panel ul{list-style:none;display:grid;gap:12px}
+    .panel li{display:flex;gap:10px}
+    .cta{padding:65px 0}
+    .cta-box{border-radius:28px;padding:45px;text-align:center;background:linear-gradient(135deg,#e8f7ed,#e7f5fc);border:1px solid #d6ebe0}
+    .cta-box p{color:var(--muted);max-width:650px;margin:10px auto 25px}
+    footer{background:#0d2e40;color:#d7e5eb;padding:38px 0}
+    .footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center}
+    footer strong{color:#fff}
+    footer small{color:#9fb5c0}
+    @media(max-width:850px){
+      .links{display:none}.hero-grid,.benefits{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.step-grid{grid-template-columns:1fr 1fr}
+      .hero{padding-top:55px}
+    }
+    @media(max-width:560px){
+      .cards,.step-grid,.stats{grid-template-columns:1fr}.hero-card{padding:15px}.cta-box{padding:32px 20px}section{padding:65px 0}
+      .brand img{height:48px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio"><img src="logo.png" alt="Hydro Tech Brasil"></a>
+      <div class="links">
+        <a href="#objetivo">Nosso objetivo</a>
+        <a href="#solucao">Solução</a>
+        <a href="#implantacao">Implantação</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="btn" href="https://wa.me/5518996933593?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Hydro%20Tech%20Brasil." target="_blank" rel="noopener">Fale conosco</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">💧 Tecnologia + 🌱 Sustentabilidade</div>
+        <h1>Irrigação inteligente para uma agricultura <span>mais sustentável.</span></h1>
+        <p>A Hydro Tech Brasil desenvolve soluções de irrigação automática para ajudar produtores a controlar o uso da água, facilitar a rotina no campo e cuidar melhor das plantações.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#implantacao">Conheça a implantação</a>
+          <a class="btn blue" href="#objetivo">Conheça nosso objetivo</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="logo.png" alt="Logo Hydro Tech Brasil">
+        <div class="stats">
+          <div class="stat"><b>Automática</b><small>Menos tarefas manuais</small></div>
+          <div class="stat"><b>Inteligente</b><small>Controle mais preciso</small></div>
+          <div class="stat"><b>Sustentável</b><small>Uso consciente da água</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="objetivo">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Nosso objetivo</div>
+        <h2>Transformar a irrigação em uma ferramenta de eficiência.</h2>
+        <p>Queremos aproximar a tecnologia do produtor, tornando a irrigação mais prática, organizada e alinhada à preservação dos recursos naturais.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">💧</div><h3>Uso consciente da água</h3><p>A automação permite aplicar água de forma mais controlada, evitando desperdícios causados por irrigação manual ou fora do momento adequado.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Mais cuidado com a plantação</h3><p>Uma rotina de irrigação planejada ajuda a manter maior regularidade no fornecimento de água para as culturas.</p></article>
+        <article class="card"><div class="icon">⚙️</div><h3>Menos trabalho manual</h3><p>O sistema automatiza etapas da irrigação e libera o produtor para dedicar mais tempo a outras atividades importantes da propriedade.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="solucao" class="steps">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Nossa solução</div>
+        <h2>Da necessidade do campo ao controle automático.</h2>
+        <p>A proposta é simples: entender a plantação, planejar a irrigação e instalar uma solução adequada à realidade de cada propriedade.</p>
+      </div>
+      <div class="step-grid">
+        <article class="step"><div class="num">1</div><h3>Diagnóstico</h3><p>Analisamos a área, a cultura, a disponibilidade de água e as necessidades de irrigação.</p></article>
+        <article class="step"><div class="num">2</div><h3>Planejamento</h3><p>Definimos os pontos de irrigação, equipamentos e lógica de funcionamento do sistema.</p></article>
+        <article class="step"><div class="num">3</div><h3>Instalação</h3><p>Implantamos a estrutura e configuramos a automação de acordo com o projeto.</p></article>
+        <article class="step"><div class="num">4</div><h3>Operação</h3><p>Com o sistema configurado, a irrigação passa a seguir a programação estabelecida.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="implantacao">
+    <div class="container benefits">
+      <div>
+        <div class="eyebrow">Facilidade de implantação</div>
+        <h2>Uma solução pensada para entrar na rotina do produtor.</h2>
+        <p style="color:var(--muted);font-size:17px">A implantação pode ser planejada por etapas, respeitando o tamanho da área e a infraestrutura existente. O objetivo é tornar a transição para a automação clara e prática.</p>
+        <div class="checklist">
+          <div class="check"><div class="tick">✓</div><div><strong>Projeto personalizado</strong><p>A configuração acompanha as características da plantação.</p></div></div>
+          <div class="check"><div class="tick">✓</div><div><strong>Instalação organizada</strong><p>Os componentes são distribuídos de acordo com o planejamento.</p></div></div>
+          <div class="check"><div class="tick">✓</div><div><strong>Automação simplificada</strong><p>Depois de configurado, o sistema reduz a necessidade de acionamentos manuais.</p></div></div>
+          <div class="check"><div class="tick">✓</div><div><strong>Possibilidade de expansão</strong><p>A solução pode ser pensada para acompanhar o crescimento da operação.</p></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Por que automatizar?</h3>
+        <p>A irrigação automática combina tecnologia e planejamento para facilitar decisões e melhorar o controle da operação.</p>
+        <ul>
+          <li>✓ Programação de horários de irrigação</li>
+          <li>✓ Controle mais consistente da rotina</li>
+          <li>✓ Redução de tarefas repetitivas</li>
+          <li>✓ Foco em eficiência e sustentabilidade</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <div class="eyebrow">Entre em contato</div>
+        <h2>Fale com a equipe Hydro Tech Brasil.</h2>
+        <p>Quer saber mais sobre irrigação automática, implantação ou uma solução para sua plantação? Nossa equipe está pronta para conversar com você.</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:25px 0 10px">
+          <a class="btn" href="https://wa.me/5518996933593?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Hydro%20Tech%20Brasil." target="_blank" rel="noopener">💬 Falar pelo WhatsApp</a>
+          <a class="btn blue" href="tel:+5518996933593">📞 (18) 99693-3593</a>
+        </div>
+        <p style="font-size:14px;margin-top:16px">WhatsApp e telefone: <strong>(18) 99693-3593</strong></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>HYDRO TECH BRASIL</strong><br><small>Irrigação automática para um futuro mais sustentável.</small></div>
+    <small>© 2026 Hydro Tech Brasil. Todos os direitos reservados.</small>
+  </div>
+</footer>
+</body>
+</html>
